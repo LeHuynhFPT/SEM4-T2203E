@@ -5,9 +5,9 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "customer")
+@Table(name = "employee")
 
-public class CustomerEntity implements Serializable {
+public class EmployeeEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -17,7 +17,7 @@ public class CustomerEntity implements Serializable {
     private String chucvu;
     private String phong;
 
-    public CustomerEntity() {
+    public EmployeeEntity() {
 
     }
 
@@ -69,7 +69,7 @@ public class CustomerEntity implements Serializable {
         this.phong = phong;
     }
 
-    public CustomerEntity(Integer id, String hoten, Date ngaysinh, String diachi, String chucvu, String phong) {
+    public EmployeeEntity(Integer id, String hoten, Date ngaysinh, String diachi, String chucvu, String phong) {
         this.id = id;
         this.hoten = hoten;
         this.ngaysinh = ngaysinh;

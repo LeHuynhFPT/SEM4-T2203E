@@ -1,24 +1,24 @@
 package com.example.example.dao.impl;
-import com.example.example.dao.CustomerDAO;
-import com.example.example.entity.CustomerEntity;
+import com.example.example.dao.EmployeeDAO;
+import com.example.example.entity.EmployeeEntity;
 import com.example.example.util.PersistenceUtil;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomerDAOImpl implements CustomerDAO {
+public class EmployeeDAOImpl implements EmployeeDAO {
     EntityManager en;
     EntityTransaction tran;
 
-    public CustomerDAOImpl(){
+    public EmployeeDAOImpl(){
         en = PersistenceUtil.createEntityManagerFactory().createEntityManager();
         tran = en.getTransaction();
     }
 
 
     @Override
-    public void createCustomer(CustomerEntity customer) {
+    public void createCustomer(EmployeeEntity customer) {
 
         try{
             tran.begin();
@@ -32,10 +32,10 @@ public class CustomerDAOImpl implements CustomerDAO {
     }
 
     @Override
-    public List<CustomerEntity> getAllCustomer() {
-        List<CustomerEntity> customer = new ArrayList<>();
+    public List<EmployeeEntity> getAllCustomer() {
+        List<EmployeeEntity> customer = new ArrayList<>();
         try{
-            Query query = en.createQuery("select c from CustomerEntity c");
+            Query query = en.createQuery("select c from EmployeeEntity c");
             return query.getResultList();
         }catch (Exception ex){
             System.out.println(ex.getMessage());
